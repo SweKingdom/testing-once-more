@@ -1,5 +1,33 @@
-﻿<h3>Student</h3>
+﻿@page "/student"
+@inject StudentService StudentService
+@using BlazorApp4.Models
+
+
+
+
+
+<h3>Student</h3>
+
+
+
+<ul>
+	@foreach (var student in studentLista)
+	{
+		<li>@Student.Name - Betyg: @Student.Grade</li>
+	}
+</ul>
+
+
+
+
+
+
 
 @code {
-
+	private List<Student> studentLista = new()
+	{
+		new Student { Name = "Philip", Grade = 1},
+		new Student { Name = "Filip", Grade = 5},
+		new Student { Name = "Giang", Grade = 4},
+	};
 }
